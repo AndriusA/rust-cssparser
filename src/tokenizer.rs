@@ -11,6 +11,7 @@ use matches::matches;
 use std::char;
 use std::i32;
 use std::ops::Range;
+use libm;
 
 /// One of the pieces the CSS input is broken into.
 ///
@@ -1073,7 +1074,7 @@ fn consume_numeric<'a>(tokenizer: &mut Tokenizer<'a>) -> Token<'a> {
                     break;
                 }
             }
-            value *= f64::powf(10., sign * exponent);
+            value *= libm::pow(10., sign * exponent);
         }
     }
 

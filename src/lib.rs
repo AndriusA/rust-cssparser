@@ -89,6 +89,7 @@ extern crate serde;
 #[macro_use]
 extern crate heapsize;
 extern crate smallvec;
+extern crate libm;
 
 pub use cssparser_macros::*;
 

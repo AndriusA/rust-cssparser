@@ -7,6 +7,7 @@
 use std::char;
 use std::i32;
 use std::ops::Range;
+use libm;
 
 use self::Token::*;
 use cow_rc_str::CowRcStr;
@@ -1073,7 +1074,7 @@ fn consume_numeric<'a>(tokenizer: &mut Tokenizer<'a>) -> Token<'a> {
                     break;
                 }
             }
-            value *= f64::powf(10., sign * exponent);
+            value *= libm::pow(10., sign * exponent);
         }
     }
 
